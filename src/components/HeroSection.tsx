@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
-import { ChevronDown, Award } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { useRef } from 'react'
 
 export default function HeroSection() {

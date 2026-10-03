@@ -2,7 +2,7 @@
 
 import React, { useRef, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Float, PerspectiveCamera, Environment, Text, MeshDistortMaterial } from '@react-three/drei'
+import { Float, Environment, MeshDistortMaterial } from '@react-three/drei'
 import * as THREE from 'three'
 
 function FloatingParticles({ count = 100 }) {
@@ -25,10 +25,10 @@ function FloatingParticles({ count = 100 }) {
 
     const dummy = useMemo(() => new THREE.Object3D(), [])
 
-    useFrame((state) => {
+    useFrame(() => {
         particles.forEach((particle, i) => {
-            let { t, factor, speed, xFactor, yFactor, zFactor } = particle
-            t = particle.t += speed / 2
+            const { factor, speed, xFactor, yFactor, zFactor } = particle
+            const t = (particle.t += speed / 2)
             const a = Math.cos(t) + Math.sin(t * 1) / 10
             const b = Math.sin(t) + Math.cos(t * 2) / 10
             const s = Math.cos(t)
