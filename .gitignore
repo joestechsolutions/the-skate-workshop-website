@@ -48,3 +48,8 @@ token.json
 
 # Waitlist data (contains user emails)
 /data/
+
+# OpenNext / Cloudflare
+.open-next
+.wrangler
+.dev.vars

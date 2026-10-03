@@ -58,5 +58,5 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Cloudflare Pages (next-on-pages): this route must run on the edge runtime.
-export const runtime = "edge";
+// Runs on the Node.js runtime inside the Cloudflare Worker (OpenNext adapter,
+// nodejs_compat). OpenNext does not support `runtime = "edge"`, so none is declared.

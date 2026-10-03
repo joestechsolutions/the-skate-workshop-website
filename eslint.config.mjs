@@ -21,5 +21,5 @@ export default defineConfig([
     files: ['src/test/**'],
     rules: { '@typescript-eslint/no-explicit-any': 'off' },
   },
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'conductor/**']),
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'conductor/**', '.open-next/**', '.wrangler/**', 'cloudflare-env.d.ts']),
 ])
