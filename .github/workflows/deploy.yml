@@ -28,9 +28,11 @@ jobs:
       CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       NEXT_TELEMETRY_DISABLED: "1"
       WRANGLER_SEND_METRICS: "false"
-      # The Worker's own URL: always the version just deployed, no zone routing in between.
+      # The gate tests the Worker's own URL: the exact version the domain's routes
+      # serve. The domain itself can't be tested from CI: Cloudflare Bot Fight Mode
+      # on the zone answers GitHub's data-center runners with 403 (seen on the first
+      # run, 2026-10-03). Check the domain from a machine with `npm run smoke`.
       WORKER_URL: https://skate-workshop-web.joe-184.workers.dev
-      PRODUCTION_URL: https://www.theskateworkshop.app
 
     steps:
       - name: Require Cloudflare credentials
@@ -65,13 +67,9 @@ jobs:
         id: smoke_worker
         run: bash scripts/smoke.sh "$WORKER_URL"
 
-      - name: Smoke test the production domain
-        id: smoke_production
-        run: bash scripts/smoke.sh "$PRODUCTION_URL"
-
       - name: Roll back to the previous Worker version
-        if: failure() && (steps.smoke_worker.outcome == 'failure' || steps.smoke_production.outcome == 'failure')
+        if: failure() && steps.smoke_worker.outcome == 'failure'
         run: |
           npx wrangler rollback --yes --message "smoke test failed for ${GITHUB_SHA::8} (run ${GITHUB_RUN_ID})"
           echo "::error::Smoke test failed after deploying ${GITHUB_SHA::8}; rolled back to the previous Worker version."
-          bash scripts/smoke.sh "$PRODUCTION_URL" || echo "::error::Production still failing after rollback — investigate now."
+          bash scripts/smoke.sh "$WORKER_URL" || echo "::error::Still failing after rollback — investigate now."
