@@ -45,7 +45,7 @@ export default function ContactPage() {
       colors: ['#FC4C02', '#FF6B35', '#FFFFFF'],
     }
 
-    function fire(particleRatio: number, opts: any) {
+    function fire(particleRatio: number, opts: confetti.Options) {
       confetti({
         ...defaults,
         ...opts,
@@ -82,8 +82,8 @@ export default function ContactPage() {
       setIsSuccess(true)
       fireConfetti()
       reset()
-    } catch (error: any) {
-      setErrorMessage(error.message || 'Something went wrong. Please try again.')
+    } catch (error) {
+      setErrorMessage((error instanceof Error && error.message) || 'Something went wrong. Please try again.')
     } finally {
       setIsSubmitting(false)
     }
