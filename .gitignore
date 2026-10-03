@@ -53,3 +53,4 @@ token.json
 .open-next
 .wrangler
 .dev.vars
+.cloudflare

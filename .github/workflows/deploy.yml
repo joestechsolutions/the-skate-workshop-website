@@ -1,0 +1,77 @@
+name: Deploy
+
+# Every push to main ships theskateworkshop.app: gate (lint, types, tests) →
+# OpenNext build → deploy to the Cloudflare Worker → smoke test → automatic
+# rollback to the previous Worker version if the smoke test fails.
+# No agent or machine needs Cloudflare credentials: merge to main and this runs.
+# Re-run by hand from the Actions tab (workflow_dispatch) to redeploy main.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# One production deploy at a time, in merge order. Never cancel a deploy midway.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      NEXT_TELEMETRY_DISABLED: "1"
+      WRANGLER_SEND_METRICS: "false"
+      # The Worker's own URL: always the version just deployed, no zone routing in between.
+      WORKER_URL: https://skate-workshop-web.joe-184.workers.dev
+      PRODUCTION_URL: https://www.theskateworkshop.app
+
+    steps:
+      - name: Require Cloudflare credentials
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::error::Repo secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID are required to deploy (see AGENTS.md)."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+
+      # The same gate as ci.yml, so nothing reaches production unchecked.
+      - name: Lint
+        run: npm run lint
+      - name: Type check
+        run: npm run typecheck
+      - name: Unit tests
+        run: npm test
+
+      - name: Build (OpenNext for Cloudflare Workers)
+        run: npx opennextjs-cloudflare build
+
+      - name: Deploy
+        run: npx opennextjs-cloudflare deploy
+
+      - name: Smoke test the new Worker version
+        id: smoke_worker
+        run: bash scripts/smoke.sh "$WORKER_URL"
+
+      - name: Smoke test the production domain
+        id: smoke_production
+        run: bash scripts/smoke.sh "$PRODUCTION_URL"
+
+      - name: Roll back to the previous Worker version
+        if: failure() && (steps.smoke_worker.outcome == 'failure' || steps.smoke_production.outcome == 'failure')
+        run: |
+          npx wrangler rollback --yes --message "smoke test failed for ${GITHUB_SHA::8} (run ${GITHUB_RUN_ID})"
+          echo "::error::Smoke test failed after deploying ${GITHUB_SHA::8}; rolled back to the previous Worker version."
+          bash scripts/smoke.sh "$PRODUCTION_URL" || echo "::error::Production still failing after rollback — investigate now."

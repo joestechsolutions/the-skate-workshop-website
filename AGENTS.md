@@ -2,6 +2,14 @@
 
 > This file is mirrored across CLAUDE.md, AGENTS.md, and GEMINI.md so the same instructions load in any AI environment.
 
+## Deploying this site (read before shipping)
+
+- **Production:** the Cloudflare Worker `skate-workshop-web` (OpenNext adapter), serving theskateworkshop.app and www through zone routes in `wrangler.jsonc`. Its own URL is https://skate-workshop-web.joe-184.workers.dev.
+- **Ship = merge to `main`.** `.github/workflows/deploy.yml` runs lint, typecheck, tests, the OpenNext build, the deploy and `scripts/smoke.sh`, and **rolls back automatically** (`wrangler rollback`) if the smoke test fails. No machine needs Cloudflare credentials. Don't deploy by hand.
+- **PRs:** `.github/workflows/ci.yml` runs the same gate, including the OpenNext build, so anything that can't ship fails on the PR.
+- **Commands:** `npm run preview` runs the production build in the real Workers runtime locally. `npm run smoke [url]` smoke-tests production. `npx wrangler rollback` rolls back. **Emergency only** (Actions down): `npx wrangler login`, then `npm run deploy`.
+- **Rules:** never add `export const runtime = "edge"`, which OpenNext can't build. Runtime secrets (`SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`) live on the Worker (`npx wrangler secret put`). Keep `workers_dev: true` in `wrangler.jsonc`, or every deploy turns the workers.dev URL off. When upgrading Next.js, upgrade `@opennextjs/cloudflare` with it. The old Pages project, `next-on-pages`, Vercel and the `joblas` upstream repo are retired: deploy only from `joestechsolutions/the-skate-workshop-website` main.
+
 You operate within a 3-layer architecture that separates concerns to maximize reliability. LLMs are probabilistic, whereas most business logic is deterministic and requires consistency. This system fixes that mismatch.
 
 ## The 3-Layer Architecture
