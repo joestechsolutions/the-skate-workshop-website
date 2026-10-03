@@ -20,10 +20,11 @@ describe('Navigation Button Styles', () => {
     
     joinButtons.forEach(button => {
       const parentLink = button.closest('a')
-      // According to guidelines: Primary is White bg, Black text
-      // We expect classes like bg-white and text-black
-      expect(parentLink?.className).toContain('bg-white')
-      expect(parentLink?.className).toContain('text-black')
+      // The shipped primary CTA: brand-primary background, white text
+      // (updated 2026-10-03 from the older white-bg/black-text guideline,
+      // which the live site no longer uses).
+      expect(parentLink?.className).toContain('bg-brand-primary')
+      expect(parentLink?.className).toContain('text-white')
       // Ensure it doesn't have the old brand-red
       expect(parentLink?.className).not.toContain('brand-red')
       expect(parentLink?.className).not.toContain('from-brand-red')
