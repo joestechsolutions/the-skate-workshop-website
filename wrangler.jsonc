@@ -1,0 +1,21 @@
+// Cloudflare Worker for theskateworkshop.app, built by the OpenNext adapter
+// (`npm run deploy`). Replaces the deprecated @cloudflare/next-on-pages, which
+// cannot build Next 16. See https://opennext.js.org/cloudflare/get-started
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "skate-workshop-web",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "services": [
+    // Must match "name" above.
+    { "binding": "WORKER_SELF_REFERENCE", "service": "skate-workshop-web" }
+  ]
+  // Deliberately not configured — each is a cost/account decision:
+  // - "images": { "binding": "IMAGES" } turns on Cloudflare Images optimization (billed past the free tier).
+  // - an R2 incremental cache; every page here is static or a plain API route, so none is needed.
+}
