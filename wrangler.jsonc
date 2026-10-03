@@ -5,6 +5,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "main": ".open-next/worker.js",
   "name": "skate-workshop-web",
+  // Keep the workers.dev URL (testing/rollback) alongside the custom domains.
+  "workers_dev": true,
+  "preview_urls": true,
   "compatibility_date": "2026-10-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
@@ -14,6 +17,13 @@
   "services": [
     // Must match "name" above.
     { "binding": "WORKER_SELF_REFERENCE", "service": "skate-workshop-web" }
+  ],
+  // Production traffic (2026-10-03): zone routes put this Worker in front of the
+  // existing proxied DNS records, which still point at the old Pages project
+  // the-skate-workshop-website. Rollback = remove these routes; Pages answers again.
+  "routes": [
+    { "pattern": "theskateworkshop.app/*", "zone_name": "theskateworkshop.app" },
+    { "pattern": "www.theskateworkshop.app/*", "zone_name": "theskateworkshop.app" }
   ]
   // Deliberately not configured — each is a cost/account decision:
   // - "images": { "binding": "IMAGES" } turns on Cloudflare Images optimization (billed past the free tier).
