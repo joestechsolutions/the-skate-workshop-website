@@ -35,6 +35,9 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     minimumCacheTTL: 31536000, // 1 year cache
+    // Next 16 only accepts quality=75 unless listed here; the logo uses 100
+    // (Navigation, Footer) and the coach photo 90 — without these they 400.
+    qualities: [75, 90, 100],
     loader: 'default',
     // Next 16 rejects query strings on local images unless localPatterns
     // explicitly allows them. The tsw-logo.png?v=2 cache-buster (Navigation,
