@@ -19,8 +19,10 @@
     { "binding": "WORKER_SELF_REFERENCE", "service": "skate-workshop-web" }
   ],
   // Production traffic (2026-10-03): zone routes put this Worker in front of the
-  // existing proxied DNS records, which still point at the old Pages project
-  // the-skate-workshop-website. Rollback = remove these routes; Pages answers again.
+  // domain. The apex and www DNS records are proxied AAAA 100:: ("originless") — the
+  // old Pages project was deleted, so nothing answers behind the Worker. Rollback =
+  // previous Worker version (`npx wrangler rollback`), never "remove the routes",
+  // which would take the site down. Zone has `always_use_https` ON.
   "routes": [
     { "pattern": "theskateworkshop.app/*", "zone_name": "theskateworkshop.app" },
     { "pattern": "www.theskateworkshop.app/*", "zone_name": "theskateworkshop.app" }
