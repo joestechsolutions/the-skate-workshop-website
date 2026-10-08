@@ -58,7 +58,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/download" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  Join the beta
+                  Download App
                 </Link>
               </li>
             </ul>
