@@ -115,7 +115,7 @@ export default function AboutPage() {
               <div className="border-l-2 border-brand-primary pl-6">
                 <h3 className="text-h4 font-heading text-white mb-3">Take It Step by Step</h3>
                 <p className="text-body-sm text-white/60">
-                  There's no rush! We'll work through tricks together at your pace. I've got 400+ tricks we can explore, but we'll go one step at a time.
+                  There's no rush! We'll work through tricks together at your pace. I've got 140 tricks we can explore, but we'll go one step at a time.
                 </p>
               </div>
 
