@@ -14,7 +14,7 @@ const splineSans = Spline_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://theskateworkshop.app'),
   title: 'The Skate Workshop App | Mobile Skateboarding Coaching from a Coach of Olympians',
-  description: 'Train with Willy Santos, working with Commission Skateboard France with 30+ years of experience. Mobile skateboarding coaching app featuring video analysis, live session tracking, and a 140-trick database.',
+  description: 'Train with Willy Santos, working with Commission Skateboard France with 30+ years of experience. Mobile skateboarding coaching app featuring video analysis, live session tracking, and 400+ trick database.',
   keywords: 'skateboarding app, mobile skate training, skateboarding coaching, elite skate training, Olympic skateboard coach, Willy Santos, professional skateboarding, skate lessons',
   authors: [{ name: 'The Skate Workshop App' }],
   icons: {
