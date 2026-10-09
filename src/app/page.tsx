@@ -55,7 +55,7 @@ export default function HomePage() {
             <div className="border-l-2 border-brand-primary pl-8">
               <h3 className="text-h4 font-heading text-white mb-4">Track Your Growth</h3>
               <p className="text-body-sm text-white/60">
-                We'll keep track of your progress together. 400+ tricks to work on, and you'll be amazed how much you improve over time.
+                We'll keep track of your progress together. 140 tricks to work on, and you'll be amazed how much you improve over time.
               </p>
             </div>
 
