@@ -73,7 +73,7 @@ export default function FeaturesPage() {
                 Track your <span className="text-brand-primary">progress</span>
               </h2>
               <p className="text-body text-white/70 mb-8">
-                We'll keep track of your progress together! With over 400 tricks to work on, you can log every session and see how much you've improved over time. It's really motivating to look back and see how far you've come.
+                We'll keep track of your progress together! With 140 tricks to work on, you can log every session and see how much you've improved over time. It's really motivating to look back and see how far you've come.
               </p>
               <p className="text-body-sm text-white/50">
                 Easy session logging • Progress tracking • Celebrate your wins
