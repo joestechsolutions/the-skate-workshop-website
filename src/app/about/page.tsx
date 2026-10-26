@@ -79,7 +79,7 @@ export default function AboutPage() {
                   <TwemojiWrapper className="text-lg mb-1 block">
                     {athlete.flag}
                   </TwemojiWrapper>
-                  <p className="text-sm text-white/80 font-heading group-hover:text-brand-primary transition-colors">
+                  <p className="text-sm text-white/80 font-heading group-hover:text-white group-hover:underline decoration-brand-primary underline-offset-2 transition-colors">
                     {athlete.name.toUpperCase()}
                   </p>
                 </div>

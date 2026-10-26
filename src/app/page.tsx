@@ -83,7 +83,7 @@ export default function HomePage() {
               <p className="text-body-lg text-white/70 max-w-2xl mb-8">
                 I'm Willy Santos, and I've been incredibly fortunate to work with some amazing skaters over the past 30+ years, including Olympic athletes. But honestly, what I love most is helping everyday skaters discover the joy of progression.
               </p>
-              <Link href="/about" className="text-brand-primary hover:text-brand-primary/80 text-lg font-heading tracking-wide">
+              <Link href="/about" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light text-lg font-heading tracking-wide">
                 Get to know me better →
               </Link>
             </div>

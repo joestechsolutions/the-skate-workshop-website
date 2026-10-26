@@ -1,16 +1,8 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 
-// Written from what the app actually does. Ground truth is
-// the-skate-workshop-v3's src/types/database.ts (the generated types the
-// client compiles against) and supabase/applied/README.md — NOT
-// supabase/schema-baseline.sql, which is an August 2 dump that predates
-// the crew-feed feature (shipped August 9) and is missing message types
-// added since. The Service has no Stripe integration and no in-app
-// revenue-share arrangement in that codebase, so this page does not
-// describe pricing tiers or a platform-processed split that don't exist.
-// If a paid plan or an in-app revenue-share ships, this page changes with
-// it, before it goes live, not after.
+// Written from what the app actually does. The language shared with the app
+// (age, user content, messaging) is kept in step with the app's app/legal.tsx.
 
 export const metadata: Metadata = {
   title: 'Terms of Service | The Skate Workshop',
@@ -25,7 +17,7 @@ export default function TermsPage() {
           <div className="max-w-4xl mx-auto">
             <h1 className="heading-xl mb-6">Terms of Service</h1>
             <p className="text-xl text-gray-400">
-              Last Updated: September 17, 2026
+              Last Updated: October 25, 2026
             </p>
           </div>
         </div>
@@ -70,29 +62,29 @@ export default function TermsPage() {
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-white mb-4">If you're under 18</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">Age</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  Many athletes on this platform are minors. If you are under 18, a parent or guardian must agree to these Terms on your behalf, and is responsible for your use of the Service. The app does not currently verify age at signup; a parent or guardian who allows a minor to use the Service is agreeing to these Terms for them.
+                  Many athletes on this platform are minors. You can create an account yourself at 13 or older. Under 13, a parent or guardian sets up the account and agrees to these Terms for you.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-3xl font-bold text-white mb-4">Your content</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  You keep ownership of the videos, photos, and messages you upload or send ("Your Content"). By uploading it, you give us a license to store, process, and show it back to the coach or athlete you're paired with, solely to run the Service — nothing broader than that.
+                  You keep ownership of the videos, photos, messages, and voice notes you upload or send ("Your Content"). By uploading it, you give us a limited license to host and display it inside the app for the features you use — nothing broader than that.
                 </p>
                 <p className="text-gray-400 leading-relaxed mt-4">
-                  A clip or milestone you mark as shared with your crew is also shown to the other athletes who train with your coach — that's the only broader visibility that exists, it only happens if you choose it, and you or your coach can unshare it at any time. Nothing is ever made public outside the app unless you separately choose to share it elsewhere yourself.
+                  A clip or milestone you mark as shared with your crew is also shown to the other athletes who train with your coach — that's the only broader visibility that exists, and it only happens if you choose it. You can make a shared clip private again at any time, and your coach can take a shared clip down. Nothing is ever made public outside the app unless you separately choose to share it elsewhere yourself.
                 </p>
                 <p className="text-gray-400 leading-relaxed mt-4">
-                  Don't upload or send content that's illegal, that harasses or endangers anyone, that includes someone else's personal information without their consent, or that infringes someone else's rights — including sharing someone else's clip to your crew without their OK. We can remove content or suspend an account that violates this.
+                  Don't upload or send content that's illegal, that harasses or endangers anyone, that shows anyone who hasn't agreed to be filmed, that includes someone else's personal information without their consent, or that infringes someone else's rights — including sharing someone else's clip to your crew without their OK. To report content or make a copyright complaint, email <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">support@theskateworkshop.app</a>; we remove content that infringes, and we can suspend an account that violates this.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-3xl font-bold text-white mb-4">Coach–athlete messaging</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  Coaches and their athletes can message each other and review training clips directly in the app. Messages are visible only to you and the coach or athlete in that conversation — never to your crew, other athletes, or other coaches. Keep it to coaching. If a message or a coach makes you uncomfortable, or you believe someone is misusing the messaging or crew-sharing features, email <a href="mailto:support@theskateworkshop.app" className="text-brand-primary hover:underline">support@theskateworkshop.app</a> and we will look into it — which can include looking at the reported message, the same as any report needs to be investigated to act on it. See our <Link href="/privacy" className="text-brand-primary hover:underline">Privacy Policy</Link> for how we handle that.
+                  Coaches and their athletes can message each other — text, video, and voice notes — and review training clips directly in the app. Messages are visible only to you and the coach or athlete in that conversation — never to your crew, other athletes, or other coaches. Keep it to coaching. If a message or a coach makes you uncomfortable, or you believe someone is misusing the messaging or crew-sharing features, email <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">support@theskateworkshop.app</a> and we will look into it — which can include looking at the reported message, the same as any report needs to be investigated to act on it. See our <Link href="/privacy" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Privacy Policy</Link> for how we handle that.
                 </p>
               </div>
 
@@ -146,7 +138,7 @@ export default function TermsPage() {
               <div>
                 <h2 className="text-3xl font-bold text-white mb-4">Account Termination</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  We can suspend or terminate an account that violates these Terms. You can stop using the Service, or ask us to delete your account, at any time by emailing <a href="mailto:support@theskateworkshop.app" className="text-brand-primary hover:underline">support@theskateworkshop.app</a>.
+                  We can suspend or terminate an account that violates these Terms. You can stop using the Service, or ask us to delete your account, at any time by emailing <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">support@theskateworkshop.app</a>.
                 </p>
               </div>
 
@@ -176,8 +168,8 @@ export default function TermsPage() {
                 <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
                   <p className="text-white mb-2">The Skate Workshop</p>
                   <p className="text-gray-400">Operated by: Joe's Tech Solutions LLC</p>
-                  <p className="text-gray-400 mt-2">Legal: <a href="mailto:legal@theskateworkshop.app" className="text-brand-primary hover:underline">legal@theskateworkshop.app</a></p>
-                  <p className="text-gray-400">Support: <a href="mailto:support@theskateworkshop.app" className="text-brand-primary hover:underline">support@theskateworkshop.app</a></p>
+                  <p className="text-gray-400 mt-2">Legal: <a href="mailto:legal@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">legal@theskateworkshop.app</a></p>
+                  <p className="text-gray-400">Support: <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">support@theskateworkshop.app</a></p>
                 </div>
               </div>
             </div>

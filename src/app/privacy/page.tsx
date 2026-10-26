@@ -1,13 +1,10 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 
-// Written from what the app and this website actually do. The app's ground
-// truth is src/types/database.ts (the generated types the client compiles
-// against) and supabase/applied/README.md in the-skate-workshop-v3 — NOT
-// supabase/schema-baseline.sql, which is an August 2 dump that predates the
-// crew-feed feature (shipped August 9) and is missing the "voice" message
-// type. The website's own collection (forms, analytics) is verified against
-// its own src/app/api/* routes and src/app/layout.tsx.
+// Written from what the app and this website actually do. The language shared
+// with the app (what we collect, children) is kept in step with the app's
+// app/legal.tsx; the website's own collection (forms, analytics) is verified
+// against its own src/app/api/* routes and src/app/layout.tsx.
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | The Skate Workshop',
@@ -22,7 +19,7 @@ export default function PrivacyPage() {
           <div className="max-w-4xl mx-auto">
             <h1 className="heading-xl mb-6">Privacy Policy</h1>
             <p className="text-xl text-gray-400">
-              Last Updated: September 17, 2026
+              Last Updated: October 25, 2026
             </p>
           </div>
         </div>
@@ -44,7 +41,7 @@ export default function PrivacyPage() {
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Account information</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Creating an account requires an email address, handled by our authentication provider (Supabase Auth) via a one-time sign-in code — no password. You choose a display name and a role — athlete or coach. Coaches are identified by a coach code; athletes optionally enter one to link to a specific coach.
+                  Creating an account requires an email address, handled by our authentication provider (Supabase Auth) via a one-time sign-in code — no password. You choose a display name and a role — athlete or coach. Skaters also give a birth year, and for a skater under 13 we record the parent or guardian's name and email. Coaches are identified by a coach code; athletes optionally enter one to link to a specific coach.
                 </p>
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Training content and messages</h3>
@@ -54,7 +51,7 @@ export default function PrivacyPage() {
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Sharing a clip or milestone with your crew</h3>
                 <p className="text-gray-400 leading-relaxed">
-                  Your training clips and progress milestones are private by default. You can choose to share an individual clip or milestone with your "crew" — the other athletes who train with your coach — and you or your coach can unshare it at any time. This sharing is opt-in per item; nothing is shared automatically. Sharing a clip does not share your messages, and coaches other than your own still cannot see your content.
+                  Your training clips and progress milestones are private by default. You can choose to share an individual clip or milestone with your "crew" — the other athletes who train with your coach. This sharing is opt-in per item; nothing is shared automatically. You can make a shared clip private again at any time, and your coach can take a shared clip down. Sharing a clip does not share your messages, and coaches other than your own still cannot see your content.
                 </p>
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Photos</h3>
@@ -122,14 +119,14 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="text-3xl font-bold text-white mb-4">Your Privacy Rights</h2>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Email <a href="mailto:privacy@theskateworkshop.app" className="text-brand-primary hover:underline">privacy@theskateworkshop.app</a> to ask what we hold about you, request a copy, ask for a correction, or ask for deletion of your active account data. If you're in California, the UK, or the EU, these are rights you have in law; we'll do it either way.
+                  Email <a href="mailto:privacy@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">privacy@theskateworkshop.app</a> to ask what we hold about you, request a copy, ask for a correction, or ask for deletion of your active account data. If you're in California, the UK, or the EU, these are rights you have in law; we'll do it either way.
                 </p>
               </div>
 
               <div>
                 <h2 className="text-3xl font-bold text-white mb-4">Children's Privacy</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  Many athletes on this platform are minors, using the app through a coach they already train with in person. The app does not verify age at signup and has no parental-consent flow — we are not claiming otherwise. We do not knowingly maintain an account for a child under 13. If you're a parent or guardian and believe your child under 13 has an account, email <a href="mailto:privacy@theskateworkshop.app" className="text-brand-primary hover:underline">privacy@theskateworkshop.app</a> and we will delete it. See also our <Link href="/terms" className="text-brand-primary hover:underline">Terms of Service</Link> for how this affects who's agreeing to what.
+                  Skaters of any age train with Willy. Under 13, an account is set up with a parent or guardian's consent, which we record (their name, email, and the time they agreed). We collect the minimum: name, email, birth year, and the clips sent to the coach. A parent or guardian can review or delete the account at any time by emailing <a href="mailto:privacy@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">privacy@theskateworkshop.app</a>. See also our <Link href="/terms" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Terms of Service</Link> for who agrees to them on a skater's behalf.
                 </p>
               </div>
 
@@ -152,8 +149,8 @@ export default function PrivacyPage() {
                 <div className="bg-gray-900 border border-gray-800 rounded-xl p-6">
                   <p className="text-white mb-2">The Skate Workshop</p>
                   <p className="text-gray-400">Operated by: Joe's Tech Solutions LLC</p>
-                  <p className="text-gray-400 mt-2">Privacy: <a href="mailto:privacy@theskateworkshop.app" className="text-brand-primary hover:underline">privacy@theskateworkshop.app</a></p>
-                  <p className="text-gray-400">Support: <a href="mailto:support@theskateworkshop.app" className="text-brand-primary hover:underline">support@theskateworkshop.app</a></p>
+                  <p className="text-gray-400 mt-2">Privacy: <a href="mailto:privacy@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">privacy@theskateworkshop.app</a></p>
+                  <p className="text-gray-400">Support: <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">support@theskateworkshop.app</a></p>
                 </div>
               </div>
             </div>
