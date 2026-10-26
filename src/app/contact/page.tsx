@@ -7,6 +7,7 @@ import { z } from 'zod'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Loader2, Mail, User, FileText, MessageSquare, Tag, Briefcase, Wrench } from 'lucide-react'
 import confetti from 'canvas-confetti'
+import { CONFETTI_COLORS } from '@/lib/brand'
 
 // Validation schema
 const contactSchema = z.object({
@@ -42,7 +43,7 @@ export default function ContactPage() {
     const count = 100
     const defaults = {
       origin: { y: 0.7 },
-      colors: ['#FC4C02', '#FF6B35', '#FFFFFF'],
+      colors: CONFETTI_COLORS,
     }
 
     function fire(particleRatio: number, opts: confetti.Options) {
@@ -113,7 +114,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
               <p className="text-gray-400 mb-4">General inquiries</p>
-              <a href="mailto:contact@theskateworkshop.app" className="text-brand-primary hover:underline">
+              <a href="mailto:contact@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">
                 contact@theskateworkshop.app
               </a>
             </div>
@@ -124,7 +125,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Team Inquiries</h3>
               <p className="text-gray-400 mb-4">Federations & teams</p>
-              <a href="mailto:teams@theskateworkshop.app" className="text-brand-primary hover:underline">
+              <a href="mailto:teams@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">
                 teams@theskateworkshop.app
               </a>
             </div>
@@ -135,7 +136,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Support</h3>
               <p className="text-gray-400 mb-4">Technical help</p>
-              <a href="mailto:support@theskateworkshop.app" className="text-brand-primary hover:underline">
+              <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">
                 support@theskateworkshop.app
               </a>
             </div>

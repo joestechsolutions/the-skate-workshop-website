@@ -51,12 +51,9 @@ const config: Config = {
   				foreground: 'hsl(var(--card-foreground))'
   			},
   			brand: {
-  				primary: '#FC4C02', // Strava Orange
-  				secondary: '#00D9FF', // Brand Cyan
-  				black: '#000000',
-  				white: '#FFFFFF',
-  				'red-dark': '#E04800',
-  				'red-light': '#FF6B35'
+  				primary: '#D7232B', // Workshop Red
+  				'red-dark': '#B31E25', // hover / pressed
+  				'red-light': '#E4555C' // light tint
   			},
   			surface: '#1F2937',
   			success: '#10b981',
@@ -229,8 +226,8 @@ const config: Config = {
   			}
   		},
   		boxShadow: {
-  			glow: '0 0 20px rgba(252, 76, 2, 0.3)',
-  			'glow-lg': '0 0 40px rgba(252, 76, 2, 0.4)',
+  			glow: '0 0 20px rgba(215, 35, 43, 0.3)',
+  			'glow-lg': '0 0 40px rgba(215, 35, 43, 0.4)',
   			glass: '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
   		},
   		backdropBlur: {

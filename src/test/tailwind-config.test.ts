@@ -5,9 +5,9 @@ describe('Tailwind Config Design Tokens', () => {
   it('should have the correct brand color palette', () => {
     const colors = config.theme?.extend?.colors as any
     expect(colors.brand).toBeDefined()
-    expect(colors.brand.primary).toBe('#FC4C02') // Strava Orange
-    expect(colors.brand.secondary).toBe('#00D9FF') // Brand Cyan
-    // Ensure legacy red is gone
+    expect(colors.brand.primary).toBe('#D7232B') // Workshop Red
+    expect(colors.brand.secondary).toBeUndefined() // no second accent: the cyan is gone
+    // the pre-2026 'brand.red' key stays gone; the current red is brand.primary
     expect(colors.brand.red).toBeUndefined()
   })
 

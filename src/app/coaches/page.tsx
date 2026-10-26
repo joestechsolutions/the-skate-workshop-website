@@ -7,6 +7,7 @@ import { z } from 'zod'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Loader2, Mail, Phone, User, Calendar, MessageSquare } from 'lucide-react'
 import confetti from 'canvas-confetti'
+import { CONFETTI_COLORS } from '@/lib/brand'
 
 // Validation schema
 const coachApplicationSchema = z.object({
@@ -39,7 +40,7 @@ export default function CoachesPage() {
     const count = 100
     const defaults = {
       origin: { y: 0.7 },
-      colors: ['#FC4C02', '#FF6B35', '#FFFFFF'],
+      colors: CONFETTI_COLORS,
     }
 
     function fire(particleRatio: number, opts: confetti.Options) {

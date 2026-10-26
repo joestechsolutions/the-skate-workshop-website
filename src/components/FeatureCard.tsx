@@ -77,7 +77,7 @@ export default function FeatureCard({ icon, title, description, highlighted = fa
         relative bg-surface/80 backdrop-blur-sm rounded-xl p-6
         transition-all duration-300 cursor-pointer
         ${highlighted
-          ? 'border-2 border-brand-secondary/50 shadow-glow'
+          ? 'border-2 border-white/50 shadow-glow'
           : 'border border-white/10 hover:border-brand-primary/50'
         }
         ${isHovered && !shouldReduceMotion ? 'shadow-2xl' : 'shadow-lg'}
@@ -118,7 +118,7 @@ export default function FeatureCard({ icon, title, description, highlighted = fa
       {/* Highlight indicator */}
       {highlighted && (
         <div className="absolute top-3 right-3">
-          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-brand-secondary/20 text-brand-secondary border border-brand-secondary/30">
+          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-semibold bg-white/20 text-white border border-white/30">
             Featured
           </span>
         </div>
