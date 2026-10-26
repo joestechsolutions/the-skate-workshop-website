@@ -2,7 +2,11 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 // Written from what the app actually does. The language shared with the app
-// (age, user content, messaging) is kept in step with the app's app/legal.tsx.
+// (user content, messaging) is kept in step with the app's app/legal.tsx. The
+// age and children sections describe the app's actual state — no age
+// verification at signup, no parental-consent capture (verified against the
+// app repo's src/types/database.ts and app/legal.tsx on 2026-10-26) — and
+// must change WITH the app, never ahead of it.
 
 export const metadata: Metadata = {
   title: 'Terms of Service | The Skate Workshop',
@@ -62,9 +66,9 @@ export default function TermsPage() {
               </div>
 
               <div>
-                <h2 className="text-3xl font-bold text-white mb-4">Age</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">If you're under 18</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  Many athletes on this platform are minors. You can create an account yourself at 13 or older. Under 13, a parent or guardian sets up the account and agrees to these Terms for you.
+                  Many athletes on this platform are minors. If you are under 18, a parent or guardian must agree to these Terms on your behalf, and is responsible for your use of the Service. The app does not currently verify age at signup; a parent or guardian who allows a minor to use the Service is agreeing to these Terms for them.
                 </p>
               </div>
 

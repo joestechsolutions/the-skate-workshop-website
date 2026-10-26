@@ -41,7 +41,7 @@ export default function PrivacyPage() {
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Account information</h3>
                 <p className="text-gray-400 leading-relaxed mb-4">
-                  Creating an account requires an email address, handled by our authentication provider (Supabase Auth) via a one-time sign-in code — no password. You choose a display name and a role — athlete or coach. Skaters also give a birth year, and for a skater under 13 we record the parent or guardian's name and email. Coaches are identified by a coach code; athletes optionally enter one to link to a specific coach.
+                  Creating an account requires an email address, handled by our authentication provider (Supabase Auth) via a one-time sign-in code — no password. You choose a display name and a role — athlete or coach. Coaches are identified by a coach code; athletes optionally enter one to link to a specific coach.
                 </p>
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Training content and messages</h3>
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
               <div>
                 <h2 className="text-3xl font-bold text-white mb-4">Children's Privacy</h2>
                 <p className="text-gray-400 leading-relaxed">
-                  Skaters of any age train with Willy. Under 13, an account is set up with a parent or guardian's consent, which we record (their name, email, and the time they agreed). We collect the minimum: name, email, birth year, and the clips sent to the coach. A parent or guardian can review or delete the account at any time by emailing <a href="mailto:privacy@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">privacy@theskateworkshop.app</a>. See also our <Link href="/terms" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Terms of Service</Link> for who agrees to them on a skater's behalf.
+                  Many athletes on this platform are minors, using the app through a coach they already train with in person. The app does not verify age at signup and has no parental-consent flow — we are not claiming otherwise. We do not knowingly maintain an account for a child under 13. If you're a parent or guardian and believe your child under 13 has an account, email <a href="mailto:privacy@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">privacy@theskateworkshop.app</a> and we will delete it. See also our <Link href="/terms" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Terms of Service</Link> for how this affects who's agreeing to what.
                 </p>
               </div>
 
