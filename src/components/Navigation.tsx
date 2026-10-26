@@ -35,7 +35,7 @@ export default function Navigation() {
             >
               <div className="relative w-16 h-16 flex items-center justify-center">
                 <Image
-                  src="/images/logo/tsw-logo.png?v=2"
+                  src="/images/logo/tsw-logo.png?v=3"
                   alt="The Skate Workshop"
                   width={64}
                   height={64}
@@ -74,7 +74,7 @@ export default function Navigation() {
                   href={link.href}
                   aria-current={pathname === link.href ? "page" : undefined}
                   className={`transition-colors text-sm font-heading tracking-wider antialiased ${
-                    pathname === link.href ? 'text-brand-primary' : 'text-white/80 hover:text-white'
+                    pathname === link.href ? 'text-white underline decoration-brand-primary decoration-2 underline-offset-4' : 'text-white/80 hover:text-white'
                   }`}
                   {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
                 >
@@ -123,7 +123,7 @@ export default function Navigation() {
                 href={link.href}
                 aria-current={pathname === link.href ? "page" : undefined}
                 className={`transition-colors text-lg font-heading tracking-wider antialiased py-2 ${
-                  pathname === link.href ? 'text-brand-primary' : 'text-white/80 hover:text-white'
+                  pathname === link.href ? 'text-white underline decoration-brand-primary decoration-2 underline-offset-4' : 'text-white/80 hover:text-white'
                 }`}
                 {...(link.external && { target: "_blank", rel: "noopener noreferrer" })}
                 onClick={() => setIsMenuOpen(false)}

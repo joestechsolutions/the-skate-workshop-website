@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center space-x-4 mb-6">
               <div className="relative w-14 h-14 flex items-center justify-center">
                 <Image
-                  src="/images/logo/tsw-logo.png?v=2"
+                  src="/images/logo/tsw-logo.png?v=3"
                   alt="The Skate Workshop App Logo"
                   width={56}
                   height={56}
@@ -132,7 +132,7 @@ export default function Footer() {
                 href="https://www.instagram.com/willysworkshop/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-2"
+                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Wrench size={16} /> Willy's Workshop
               </a>
@@ -140,7 +140,7 @@ export default function Footer() {
                 href="https://www.instagram.com/skate_warz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-2"
+                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Target size={16} /> Skate Warz
               </a>
@@ -148,7 +148,7 @@ export default function Footer() {
                 href="https://www.instagram.com/couchcurbs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-2"
+                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <MapPin size={16} /> Couch Curbs
               </a>
@@ -156,7 +156,7 @@ export default function Footer() {
                 href="https://www.instagram.com/kaintayoday/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-2"
+                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Utensils size={16} /> Kain Tayo Day
               </a>
@@ -164,7 +164,7 @@ export default function Footer() {
                 href="https://www.instagram.com/commission_skateboard_france/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-brand-primary transition-colors text-sm flex items-center gap-2"
+                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Flag size={16} /> Commission Skateboard France
               </a>
