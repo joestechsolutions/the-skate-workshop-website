@@ -47,10 +47,10 @@ function FloatingParticles({ count = 100 }) {
 
     return (
         <>
-            <pointLight ref={light} distance={40} intensity={8} color="#FC4C02" />
+            <pointLight ref={light} distance={40} intensity={8} color="#D7232B" />
             <instancedMesh ref={mesh} args={[undefined, undefined, count]}>
                 <dodecahedronGeometry args={[0.2, 0]} />
-                <meshStandardMaterial color="#FC4C02" roughness={0.5} />
+                <meshStandardMaterial color="#D7232B" roughness={0.5} />
             </instancedMesh>
         </>
     )
@@ -62,7 +62,7 @@ function FloatingCore() {
             <mesh>
                 <torusKnotGeometry args={[1, 0.3, 128, 32]} />
                 <MeshDistortMaterial
-                    color="#00D9FF"
+                    color="#FFFFFF"
                     speed={2}
                     distort={0.4}
                     radius={1}
@@ -77,8 +77,8 @@ export default function ThreeScene() {
         <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
             <Canvas shadows camera={{ position: [0, 0, 15], fov: 60 }}>
                 <ambientLight intensity={0.2} />
-                <pointLight position={[10, 10, 10]} intensity={1.5} color="#00D9FF" />
-                <pointLight position={[-10, -10, -10]} intensity={1} color="#FC4C02" />
+                <pointLight position={[10, 10, 10]} intensity={1.5} color="#FFFFFF" />
+                <pointLight position={[-10, -10, -10]} intensity={1} color="#D7232B" />
                 <FloatingParticles count={50} />
                 <FloatingCore />
                 <Environment preset="night" />

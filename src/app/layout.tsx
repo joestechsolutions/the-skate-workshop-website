@@ -60,7 +60,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#D7232B" />
       </head>
       <body className={`${splineSans.variable} ${splineSans.className} overflow-x-hidden antialiased bg-background text-white`}>
         <Navigation />

@@ -132,7 +132,7 @@ video {
 
 /* Premium Buttons - Responsive */
 .btn-primary {
-  background-color: #FC4C02;
+  @apply bg-brand-primary;
   color: white;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -144,7 +144,7 @@ video {
 }
 
 .btn-primary:hover {
-  background-color: #E04800;
+  @apply bg-brand-red-dark;
   transform: scale(1.05);
 }
 
@@ -159,7 +159,7 @@ video {
 }
 
 .btn-secondary {
-  border: 2px solid #FC4C02;
+  @apply border-2 border-brand-primary;
   color: white;
   font-weight: 600;
   border-radius: 0.5rem;
@@ -172,7 +172,7 @@ video {
 }
 
 .btn-secondary:hover {
-  background-color: rgba(252, 76, 2, 0.1);
+  @apply bg-brand-primary/10;
 }
 
 @media (min-width: 800px) {

@@ -39,15 +39,15 @@ const nextConfig = {
     qualities: [75, 90, 100],
     loader: 'default',
     // Next 16 rejects query strings on local images unless localPatterns
-    // explicitly allows them. The tsw-logo.png?v=2 cache-buster (Navigation,
+    // explicitly allows them. The tsw-logo.png?v=3 cache-buster (Navigation,
     // Footer) needs a pattern that permits a search string.
     localPatterns: [
       // All local images WITHOUT a query string (about, features, home pages).
       { pathname: '**', search: '' },
-      // Cache-busted logo served with ?v=2 (src/components/Navigation.tsx,
+      // Cache-busted logo served with ?v=3 (src/components/Navigation.tsx,
       // src/components/Footer.tsx). search matches url.search exactly,
       // including the leading "?".
-      { pathname: '/images/logo/**', search: '?v=2' },
+      { pathname: '/images/logo/**', search: '?v=3' },
     ],
   },
   poweredByHeader: false,

@@ -29,11 +29,11 @@ describe('FeatureCard Styles', () => {
     // The guidelines say subtle borders (#374151)
   })
 
-  it('should use brand secondary (cyan) instead of red for highlights', () => {
+  it('should use paper white, not a second accent, for highlights', () => {
     const { container } = render(<FeatureCard {...props} highlighted={true} />)
     const card = container.firstChild as HTMLElement
     
-    expect(card.className).toContain('border-brand-secondary')
-    expect(card.className).not.toContain('brand-red')
+    expect(card.className).toContain('border-white/50')
+    expect(card.className).not.toContain('brand-secondary')
   })
 })

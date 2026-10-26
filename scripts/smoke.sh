@@ -31,7 +31,7 @@ for page in / /about /coaches /contact /download /features /pricing /privacy /te
 done
 check 404 "unknown path" "$BASE/smoke-check-$(date +%s)-does-not-exist"
 # Next 16 rejects image qualities not listed in next.config.js (#18): the logo uses 100.
-check 200 "logo via /_next/image (q=100)" "$BASE/_next/image?url=%2Fimages%2Flogo%2Ftsw-logo.png%3Fv%3D2&w=128&q=100"
+check 200 "logo via /_next/image (q=100)" "$BASE/_next/image?url=%2Fimages%2Flogo%2Ftsw-logo.png%3Fv%3D3&w=128&q=100"
 for api in contact waitlist coach-application; do
   check 400 "POST /api/$api (empty body rejected)" -X POST -H 'content-type: application/json' -d '{}' "$BASE/api/$api"
 done
