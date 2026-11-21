@@ -112,7 +112,7 @@ export default function FeatureCard({ icon, title, description, highlighted = fa
         <h3 className="text-xl font-bold text-white mb-3">{title}</h3>
 
         {/* Description */}
-        <p className="text-gray-400 leading-relaxed">{description}</p>
+        <p className="text-ink-muted leading-relaxed">{description}</p>
       </div>
 
       {/* Highlight indicator */}

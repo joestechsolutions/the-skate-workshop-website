@@ -21,12 +21,8 @@ describe('FeatureCard Styles', () => {
     const { container } = render(<FeatureCard {...props} />)
     const card = container.firstChild as HTMLElement
     
-    // According to guidelines: Surface is Dark Gray (#1F2937)
-    // We expect bg-surface or similar
+    // Surface is the app's warm dark surface (#1F1C1C)
     expect(card.className).toContain('bg-surface')
-    // Border should be Gray 700/800 which is #374151 or similar
-    // Let's check for border-white/10 or border-gray-700
-    // The guidelines say subtle borders (#374151)
   })
 
   it('should use paper white, not a second accent, for highlights', () => {

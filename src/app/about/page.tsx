@@ -26,7 +26,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="relative h-[600px] bg-gray-900/30 rounded-2xl overflow-hidden">
+            <div className="relative h-[600px] bg-surface/30 rounded-2xl overflow-hidden">
               <Image
                 src="/images/coach-willy.jpg"
                 alt="Willy Santos"

@@ -93,11 +93,11 @@ export default function ContactPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-background-grouped to-background">
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl mb-6">Get in Touch</h1>
-            <p className="text-2xl text-gray-400">
+            <p className="text-2xl text-ink-muted">
               Have questions? We're here to help.
             </p>
           </div>
@@ -113,7 +113,7 @@ export default function ContactPage() {
                 <Mail className="w-6 h-6 text-brand-primary" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
-              <p className="text-gray-400 mb-4">General inquiries</p>
+              <p className="text-ink-muted mb-4">General inquiries</p>
               <a href="mailto:contact@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">
                 contact@theskateworkshop.app
               </a>
@@ -124,7 +124,7 @@ export default function ContactPage() {
                 <Briefcase className="w-6 h-6 text-brand-primary" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Team Inquiries</h3>
-              <p className="text-gray-400 mb-4">Federations & teams</p>
+              <p className="text-ink-muted mb-4">Federations & teams</p>
               <a href="mailto:teams@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">
                 teams@theskateworkshop.app
               </a>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <Wrench className="w-6 h-6 text-brand-primary" />
               </div>
               <h3 className="text-xl font-bold text-white mb-2">Support</h3>
-              <p className="text-gray-400 mb-4">Technical help</p>
+              <p className="text-ink-muted mb-4">Technical help</p>
               <a href="mailto:support@theskateworkshop.app" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">
                 support@theskateworkshop.app
               </a>
@@ -145,7 +145,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-white mb-2 text-center">Send Us a Message</h2>
-            <p className="text-gray-400 mb-8 text-center">Fill out the form below and we'll get back to you within 24 hours</p>
+            <p className="text-ink-muted mb-8 text-center">Fill out the form below and we'll get back to you within 24 hours</p>
 
             <AnimatePresence mode="wait">
               {isSuccess ? (
@@ -190,7 +190,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit(onSubmit)}
-                  className="bg-gradient-to-br from-gray-900/80 to-gray-900/60 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-gray-800"
+                  className="bg-gradient-to-br from-surface/80 to-surface/60 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-line"
                 >
                   <div className="space-y-6">
                     {/* Name and Email - Two Column Grid */}
@@ -201,7 +201,7 @@ export default function ContactPage() {
                           Name *
                         </label>
                         <div className="relative">
-                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                             <User className="w-5 h-5" />
                           </div>
                           <input
@@ -209,7 +209,7 @@ export default function ContactPage() {
                             id="name"
                             type="text"
                             placeholder="Your name"
-                            className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                            className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                               transition-all duration-200 focus:outline-none focus:ring-2
                               ${errors.name
                                 ? 'border-error focus:ring-error/50'
@@ -237,7 +237,7 @@ export default function ContactPage() {
                           Email *
                         </label>
                         <div className="relative">
-                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                          <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                             <Mail className="w-5 h-5" />
                           </div>
                           <input
@@ -245,7 +245,7 @@ export default function ContactPage() {
                             id="email"
                             type="email"
                             placeholder="your@email.com"
-                            className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                            className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                               transition-all duration-200 focus:outline-none focus:ring-2
                               ${errors.email
                                 ? 'border-error focus:ring-error/50'
@@ -274,7 +274,7 @@ export default function ContactPage() {
                         Inquiry Type *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                           <Tag className="w-5 h-5" />
                         </div>
                         <select
@@ -315,7 +315,7 @@ export default function ContactPage() {
                         Subject *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                           <FileText className="w-5 h-5" />
                         </div>
                         <input
@@ -323,7 +323,7 @@ export default function ContactPage() {
                           id="subject"
                           type="text"
                           placeholder="Brief subject of your message"
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
                             ${errors.subject
                               ? 'border-error focus:ring-error/50'
@@ -351,7 +351,7 @@ export default function ContactPage() {
                         Message *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-4 text-gray-500">
+                        <div className="absolute left-4 top-4 text-ink-muted">
                           <MessageSquare className="w-5 h-5" />
                         </div>
                         <textarea
@@ -359,7 +359,7 @@ export default function ContactPage() {
                           id="message"
                           rows={6}
                           placeholder="Tell us how we can help you..."
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2 resize-none
                             ${errors.message
                               ? 'border-error focus:ring-error/50'
@@ -405,7 +405,7 @@ export default function ContactPage() {
                       className={`w-full font-semibold px-8 py-4 rounded-lg transition-all duration-200
                         flex items-center justify-center gap-2
                         ${isSubmitting || !isValid
-                          ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                          ? 'bg-surface-raised text-ink-muted cursor-not-allowed'
                           : 'bg-brand-primary hover:bg-brand-primary/90 text-white shadow-lg hover:shadow-glow'
                         }`}
                     >
@@ -427,36 +427,36 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-900/30">
+      <section className="py-20 bg-surface/30">
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-12">Frequently Asked Questions</h2>
             
             <div className="space-y-6">
-              <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">How quickly will I hear back?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   We respond to all inquiries within 24 hours during business days. For urgent support issues, please email support@theskateworkshop.app directly.
                 </p>
               </div>
 
-              <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Can I schedule a demo?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   Yes! Teams and federations interested in custom packages can request a personalized demo. Select "Team/Federation Package" as your inquiry type.
                 </p>
               </div>
 
-              <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Do you offer phone support?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   Currently, we provide support via email and in-app chat. Elite tier members receive priority support with 24-hour response times.
                 </p>
               </div>
 
-              <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">How do I report a bug?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   Please email support@theskateworkshop.app with details about the issue, including your device type, OS version, and steps to reproduce the problem.
                 </p>
               </div>

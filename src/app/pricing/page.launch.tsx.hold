@@ -11,13 +11,13 @@ export default function PricingPage() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section className="py-20 bg-gradient-to-b from-background-grouped to-background">
         <div className="section-container">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="heading-xl mb-6">
               Choose Your Coaching Plan
             </h1>
-            <p className="text-2xl text-gray-400">
+            <p className="text-2xl text-ink-muted">
               From self-paced learning to 1-on-1 coaching with Olympic-level experts
             </p>
           </div>
@@ -30,12 +30,12 @@ export default function PricingPage() {
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* Basic Training */}
             <div className="bg-surface/50 border-2 border-white/10 rounded-2xl p-8 hover:border-brand-primary/50 transition-all">
-              <div className="text-sm font-semibold text-gray-400 mb-2">BASIC TRAINING</div>
+              <div className="text-sm font-semibold text-ink-muted mb-2">BASIC TRAINING</div>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-white">$9.99</span>
-                <span className="text-gray-400">/month</span>
+                <span className="text-ink-muted">/month</span>
               </div>
-              <p className="text-gray-400 mb-8">
+              <p className="text-ink-muted mb-8">
                 Perfect for skaters who want access to professional training content
               </p>
               
@@ -68,11 +68,11 @@ export default function PricingPage() {
                   <span className="text-brand-primary mr-3">✓</span>
                   <span className="text-gray-300">Community features</span>
                 </li>
-                <li className="flex items-start text-gray-500">
+                <li className="flex items-start text-ink-muted">
                   <span className="mr-3">✗</span>
                   <span>Coach feedback</span>
                 </li>
-                <li className="flex items-start text-gray-500">
+                <li className="flex items-start text-ink-muted">
                   <span className="mr-3">✗</span>
                   <span>1-on-1 coaching sessions</span>
                 </li>
@@ -134,12 +134,12 @@ export default function PricingPage() {
 
             {/* Elite 1-on-1 Access */}
             <div className="bg-surface/50 border-2 border-white/10 rounded-2xl p-8 hover:border-brand-primary/50 transition-all">
-              <div className="text-sm font-semibold text-gray-400 mb-2">ELITE 1-ON-1 ACCESS</div>
+              <div className="text-sm font-semibold text-ink-muted mb-2">ELITE 1-ON-1 ACCESS</div>
               <div className="mb-6">
                 <span className="text-5xl font-bold text-white">$49.99</span>
-                <span className="text-gray-400">/month</span>
+                <span className="text-ink-muted">/month</span>
               </div>
-              <p className="text-gray-400 mb-8">
+              <p className="text-ink-muted mb-8">
                 Competitive athletes seeking direct coaching from Willy's network
               </p>
               
@@ -147,7 +147,7 @@ export default function PricingPage() {
                 Get Started
               </Link>
               
-              <div className="text-sm font-semibold text-gray-400 mb-4 uppercase">Everything in Pro, plus:</div>
+              <div className="text-sm font-semibold text-ink-muted mb-4 uppercase">Everything in Pro, plus:</div>
               
               <ul className="space-y-4">
                 <li className="flex items-start">
@@ -184,7 +184,7 @@ export default function PricingPage() {
 
           {/* Additional Note */}
           <div className="max-w-4xl mx-auto mt-12 text-center">
-            <p className="text-gray-400">
+            <p className="text-ink-muted">
               💡 <strong className="text-white">Coaching sessions</strong> are separate from subscriptions and start at $200/hour. Elite members get priority booking.
             </p>
           </div>
@@ -198,10 +198,10 @@ export default function PricingPage() {
             <h2 className="heading-md text-center mb-12">1-on-1 Coaching Sessions</h2>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-8">
+              <div className="bg-surface/50 border border-line rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-4">1-Hour Session</h3>
                 <div className="text-4xl font-bold text-brand-primary mb-6">$200</div>
-                <ul className="space-y-3 text-gray-400">
+                <ul className="space-y-3 text-ink-muted">
                   <li className="flex items-start">
                     <span className="text-brand-primary mr-2">•</span>
                     Live 1-on-1 coaching
@@ -221,10 +221,10 @@ export default function PricingPage() {
                 </ul>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-8">
+              <div className="bg-surface/50 border border-line rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-4">2-Hour Session</h3>
                 <div className="text-4xl font-bold text-brand-primary mb-6">$400</div>
-                <ul className="space-y-3 text-gray-400">
+                <ul className="space-y-3 text-ink-muted">
                   <li className="flex items-start">
                     <span className="text-brand-primary mr-2">•</span>
                     Extended coaching time
@@ -259,16 +259,16 @@ export default function PricingPage() {
         <div className="section-container">
           <div className="max-w-4xl mx-auto">
             <h2 className="heading-md text-center mb-6">Team & Federation Packages</h2>
-            <p className="text-xl text-gray-400 text-center mb-12">
+            <p className="text-xl text-ink-muted text-center mb-12">
               Custom solutions for skateboarding teams, schools, and national federations
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-8">
+              <div className="bg-surface/50 border border-line rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-4">Team Coaching</h3>
                 <div className="text-3xl font-bold text-brand-primary mb-4">$2,500 - $5,000</div>
-                <p className="text-gray-400 mb-6">per month</p>
-                <ul className="space-y-3 text-gray-400">
+                <p className="text-ink-muted mb-6">per month</p>
+                <ul className="space-y-3 text-ink-muted">
                   <li className="flex items-start">
                     <span className="text-brand-primary mr-2">•</span>
                     10-20 athlete accounts
@@ -292,11 +292,11 @@ export default function PricingPage() {
                 </ul>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-8">
+              <div className="bg-surface/50 border border-line rounded-xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-4">Federation Contract</h3>
                 <div className="text-3xl font-bold text-brand-primary mb-4">$15,000 - $35,000</div>
-                <p className="text-gray-400 mb-6">per month</p>
-                <ul className="space-y-3 text-gray-400">
+                <p className="text-ink-muted mb-6">per month</p>
+                <ul className="space-y-3 text-ink-muted">
                   <li className="flex items-start">
                     <span className="text-brand-primary mr-2">•</span>
                     Unlimited athlete accounts
@@ -337,44 +337,44 @@ export default function PricingPage() {
             <h2 className="heading-md text-center mb-12">Frequently Asked Questions</h2>
             
             <div className="space-y-6">
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Can I cancel anytime?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   Yes! All subscriptions are month-to-month with no long-term commitment. Cancel anytime from your account settings.
                 </p>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Do I need Elite tier to book coaching sessions?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   No. Anyone can book 1-on-1 coaching sessions, but Elite members get priority scheduling and don't pay the booking platform fee.
                 </p>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Is there a free trial?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   We offer a limited free tier that includes basic features. Upgrade to Basic Training or Pro Coaching anytime to access premium features.
                 </p>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Which coaches are in the network?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   Our network includes coaches vetted by Willy Santos, including coaches from Commission Skateboard France and professional skaters with 5+ years coaching experience.
                 </p>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">Can I switch plans?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   Yes! Upgrade or downgrade anytime. Changes take effect at the start of your next billing cycle.
                 </p>
               </div>
 
-              <div className="bg-surface/50 border border-gray-800 rounded-xl p-6">
+              <div className="bg-surface/50 border border-line rounded-xl p-6">
                 <h3 className="font-bold text-white mb-2">What payment methods do you accept?</h3>
-                <p className="text-gray-400">
+                <p className="text-ink-muted">
                   We accept all major credit cards, debit cards, and digital wallets through our secure Stripe payment processing.
                 </p>
               </div>
@@ -387,7 +387,7 @@ export default function PricingPage() {
       <section className="py-20 bg-background">
         <div className="section-container text-center">
           <h2 className="heading-lg mb-6">Start Training with the Best</h2>
-          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-ink-muted mb-8 max-w-2xl mx-auto">
             Download The Skate Workshop and choose the plan that's right for your skateboarding journey.
           </p>
           <Link href="/download" className="btn-primary">
