@@ -38,7 +38,7 @@ export default function StatsSection() {
   ]
 
   return (
-    <section className="py-20 bg-background border-y border-gray-800">
+    <section className="py-20 bg-background border-y border-line">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +50,7 @@ export default function StatsSection() {
           <h2 className="text-3xl md:text-4xl font-heading text-white mb-4">
             Proven Track Record
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-ink-muted max-w-2xl mx-auto">
             Numbers that showcase our commitment to elite skateboarding coaching
           </p>
         </motion.div>
@@ -92,7 +92,7 @@ export default function StatsSection() {
                 </div>
 
                 {/* Description */}
-                <div className="text-gray-400 text-xs md:text-sm font-body">
+                <div className="text-ink-muted text-xs md:text-sm font-body">
                   {stat.description}
                 </div>
               </motion.div>

@@ -154,13 +154,13 @@ export default function WaitlistForm({ variant = 'embedded' }: WaitlistFormProps
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onSubmit={handleSubmit(onSubmit)}
-            className="bg-gradient-to-br from-gray-900/80 to-gray-900/60 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-gray-800"
+            className="bg-gradient-to-br from-surface/80 to-surface/60 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-line"
           >
             <div className="text-center mb-8">
               <h3 className="text-2xl md:text-3xl font-heading text-white mb-3">
                 Join the Launch Waitlist
               </h3>
-              <p className="text-gray-400">
+              <p className="text-ink-muted">
                 Get exclusive early access and be among the first to experience elite skateboarding coaching.
               </p>
             </div>
@@ -172,7 +172,7 @@ export default function WaitlistForm({ variant = 'embedded' }: WaitlistFormProps
                   Email Address *
                 </label>
                 <div className="relative">
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                     <Mail className="w-5 h-5" />
                   </div>
                   <input
@@ -180,7 +180,7 @@ export default function WaitlistForm({ variant = 'embedded' }: WaitlistFormProps
                     id="email"
                     type="email"
                     placeholder="your@email.com"
-                    className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                    className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                       transition-all duration-200 focus:outline-none focus:ring-2
                       ${errors.email
                         ? 'border-error focus:ring-error/50'
@@ -222,7 +222,7 @@ export default function WaitlistForm({ variant = 'embedded' }: WaitlistFormProps
                   id="name"
                   type="text"
                   placeholder="Your name"
-                  className="w-full px-4 py-4 bg-black/40 border border-gray-700 rounded-lg text-white placeholder-gray-500
+                  className="w-full px-4 py-4 bg-black/40 border border-line rounded-lg text-white placeholder-ink-muted
                     transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-brand-primary"
                 />
               </div>
@@ -251,7 +251,7 @@ export default function WaitlistForm({ variant = 'embedded' }: WaitlistFormProps
                 className={`w-full font-semibold px-8 py-4 rounded-lg transition-all duration-200
                   flex items-center justify-center gap-2
                   ${isSubmitting || !isValid
-                    ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                    ? 'bg-surface-raised text-ink-muted cursor-not-allowed'
                     : 'bg-brand-primary hover:bg-brand-primary/90 text-white shadow-lg hover:shadow-glow'
                   }`}
               >
@@ -267,13 +267,13 @@ export default function WaitlistForm({ variant = 'embedded' }: WaitlistFormProps
 
               {/* Why-disabled hint: user testing read the grey button as broken */}
               {!isValid && !isSubmitting && (
-                <p className="text-gray-500 text-sm text-center" aria-live="polite">
+                <p className="text-ink-muted text-sm text-center" aria-live="polite">
                   Enter your email above to join the list
                 </p>
               )}
 
               {/* Trust Indicators */}
-              <div className="flex items-center justify-center gap-6 text-gray-500 text-sm pt-4">
+              <div className="flex items-center justify-center gap-6 text-ink-muted text-sm pt-4">
                 <div className="flex items-center gap-2">
                   <Lock className="w-4 h-4" />
                   <span>We respect your privacy</span>

@@ -20,7 +20,9 @@ const config: Config = {
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
-  			background: '#121212', // Softer Dark Background (Strava/Modern)
+  			// Warm dark neutrals = the app's dark palette (joestechsolutions/the-skate-workshop src/theme/tokens.ts)
+  			background: '#121010', // app bg: page ground
+  			'background-grouped': '#0B0A0A', // app bgGrouped: deepest ground (hero gradient top)
   			foreground: 'hsl(var(--foreground))',
   			primary: {
   				DEFAULT: 'hsl(var(--primary))',
@@ -55,7 +57,10 @@ const config: Config = {
   				'red-dark': '#B31E25', // hover / pressed
   				'red-light': '#E4555C' // light tint
   			},
-  			surface: '#1F2937',
+  			surface: '#1F1C1C', // app surface: cards and panels
+  			'surface-raised': '#2A2626', // app surfaceRaised: filled neutral controls
+  			line: '#2C292A', // app line: borders and dividers
+  			'ink-muted': '#A39E9C', // app inkMuted: secondary text, icons, placeholders
   			success: '#10b981',
   			warning: '#f59e0b',
   			error: '#ef4444',

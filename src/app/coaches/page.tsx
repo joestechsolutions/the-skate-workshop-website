@@ -187,7 +187,7 @@ export default function CoachesPage() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   onSubmit={handleSubmit(onSubmit)}
-                  className="bg-gradient-to-br from-gray-900/80 to-gray-900/60 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-gray-800"
+                  className="bg-gradient-to-br from-surface/80 to-surface/60 backdrop-blur-lg rounded-2xl p-8 md:p-12 border border-line"
                 >
                   <div className="space-y-6">
                     {/* Full Name */}
@@ -196,7 +196,7 @@ export default function CoachesPage() {
                         Full Name *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                           <User className="w-5 h-5" />
                         </div>
                         <input
@@ -204,7 +204,7 @@ export default function CoachesPage() {
                           id="fullName"
                           type="text"
                           placeholder="Your full name"
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
                             ${errors.fullName
                               ? 'border-error focus:ring-error/50'
@@ -232,7 +232,7 @@ export default function CoachesPage() {
                         Email Address *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                           <Mail className="w-5 h-5" />
                         </div>
                         <input
@@ -240,7 +240,7 @@ export default function CoachesPage() {
                           id="email"
                           type="email"
                           placeholder="your@email.com"
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
                             ${errors.email
                               ? 'border-error focus:ring-error/50'
@@ -268,7 +268,7 @@ export default function CoachesPage() {
                         Phone Number *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                           <Phone className="w-5 h-5" />
                         </div>
                         <input
@@ -276,7 +276,7 @@ export default function CoachesPage() {
                           id="phone"
                           type="tel"
                           placeholder="+1 (555) 000-0000"
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
                             ${errors.phone
                               ? 'border-error focus:ring-error/50'
@@ -304,7 +304,7 @@ export default function CoachesPage() {
                         Years of Coaching Experience *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-ink-muted">
                           <Calendar className="w-5 h-5" />
                         </div>
                         <input
@@ -312,7 +312,7 @@ export default function CoachesPage() {
                           id="yearsExperience"
                           type="number"
                           placeholder="e.g., 5"
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
                             ${errors.yearsExperience
                               ? 'border-error focus:ring-error/50'
@@ -340,7 +340,7 @@ export default function CoachesPage() {
                         Why do you want to join? *
                       </label>
                       <div className="relative">
-                        <div className="absolute left-4 top-4 text-gray-500">
+                        <div className="absolute left-4 top-4 text-ink-muted">
                           <MessageSquare className="w-5 h-5" />
                         </div>
                         <textarea
@@ -348,7 +348,7 @@ export default function CoachesPage() {
                           id="message"
                           rows={5}
                           placeholder="Tell us about your coaching experience and why you'd like to join The Skate Workshop..."
-                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-gray-500
+                          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2 resize-none
                             ${errors.message
                               ? 'border-error focus:ring-error/50'
@@ -394,7 +394,7 @@ export default function CoachesPage() {
                       className={`w-full font-semibold px-8 py-4 rounded-lg transition-all duration-200
                         flex items-center justify-center gap-2
                         ${isSubmitting || !isValid
-                          ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
+                          ? 'bg-surface-raised text-ink-muted cursor-not-allowed'
                           : 'bg-brand-primary hover:bg-brand-primary/90 text-white shadow-lg hover:shadow-glow'
                         }`}
                     >

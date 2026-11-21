@@ -4,7 +4,7 @@ import { Wrench, Target, MapPin, Utensils, Flag } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-background border-t border-gray-800">
+    <footer className="bg-background border-t border-line">
       <div className="section-container py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -37,7 +37,7 @@ export default function Footer() {
                 }}>Expert Mobile Training</span>
               </div>
             </div>
-            <p className="text-gray-400 text-sm font-body">
+            <p className="text-ink-muted text-sm font-body">
               Mobile skateboarding coaching app from Olympic-level coach Willy Santos
             </p>
           </div>
@@ -47,17 +47,17 @@ export default function Footer() {
             <h3 className="font-heading text-white mb-4">Platform</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/features" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/features" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/pricing" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/download" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/download" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Join the beta
                 </Link>
               </li>
@@ -69,19 +69,19 @@ export default function Footer() {
             <h3 className="font-heading text-white mb-4">For Coaches</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/coaches" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/coaches" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Join Our Network
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/about" className="text-ink-muted hover:text-white transition-colors text-sm">
                   About Willy Santos
                 </Link>
               </li>
               <li>
                 <Link 
                   href="https://willysworkshop.com/" 
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                  className="text-ink-muted hover:text-white transition-colors text-sm"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -96,27 +96,27 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/contact" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/privacy" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <Link href="/terms" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Terms of Service
                 </Link>
               </li>
-              <li className="pt-2 border-t border-gray-800">
-                <a href="mailto:privacy@theskateworkshop.app" className="text-gray-400 hover:text-white transition-colors text-sm">
+              <li className="pt-2 border-t border-line">
+                <a href="mailto:privacy@theskateworkshop.app" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Privacy Inquiries
                 </a>
               </li>
               <li>
-                <a href="mailto:legal@theskateworkshop.app" className="text-gray-400 hover:text-white transition-colors text-sm">
+                <a href="mailto:legal@theskateworkshop.app" className="text-ink-muted hover:text-white transition-colors text-sm">
                   Legal Inquiries
                 </a>
               </li>
@@ -124,7 +124,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800">
+        <div className="mt-12 pt-8 border-t border-line">
           <div className="mb-6">
             <h3 className="text-white font-semibold mb-4 text-center">Follow Willy's Ecosystem</h3>
             <div className="flex flex-wrap justify-center gap-6">
@@ -132,7 +132,7 @@ export default function Footer() {
                 href="https://www.instagram.com/willysworkshop/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
+                className="text-ink-muted hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Wrench size={16} /> Willy's Workshop
               </a>
@@ -140,7 +140,7 @@ export default function Footer() {
                 href="https://www.instagram.com/skate_warz/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
+                className="text-ink-muted hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Target size={16} /> Skate Warz
               </a>
@@ -148,7 +148,7 @@ export default function Footer() {
                 href="https://www.instagram.com/couchcurbs/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
+                className="text-ink-muted hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <MapPin size={16} /> Couch Curbs
               </a>
@@ -156,7 +156,7 @@ export default function Footer() {
                 href="https://www.instagram.com/kaintayoday/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
+                className="text-ink-muted hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Utensils size={16} /> Kain Tayo Day
               </a>
@@ -164,7 +164,7 @@ export default function Footer() {
                 href="https://www.instagram.com/commission_skateboard_france/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
+                className="text-ink-muted hover:text-white hover:underline decoration-brand-primary underline-offset-2 transition-colors text-sm flex items-center gap-2"
               >
                 <Flag size={16} /> Commission Skateboard France
               </a>
@@ -172,10 +172,10 @@ export default function Footer() {
           </div>
           
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+            <p className="text-ink-muted text-sm">
               © {new Date().getFullYear()} The Skate Workshop App. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm">
+            <p className="text-ink-muted text-sm">
               Powered by Joe's Tech Solutions LLC
             </p>
           </div>
