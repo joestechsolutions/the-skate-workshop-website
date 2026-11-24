@@ -28,7 +28,7 @@ export default async function JoinPage({ searchParams }: Props) {
               <p
                 role="text"
                 aria-label={spokenCode(code)}
-                className="font-heading text-5xl sm:text-6xl tracking-wider text-brand-primary break-all"
+                className="font-heading text-5xl sm:text-6xl tracking-wider text-white break-all"
               >
                 {formatCrewCode(code)}
               </p>
