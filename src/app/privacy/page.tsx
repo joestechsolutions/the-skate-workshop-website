@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <div className="max-w-4xl mx-auto">
             <h1 className="heading-xl mb-6">Privacy Policy</h1>
             <p className="text-xl text-ink-muted">
-              Last Updated: October 25, 2026
+              Last Updated: November 25, 2026
             </p>
           </div>
         </div>
@@ -67,6 +67,11 @@ export default function PrivacyPage() {
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Crash reports, diagnostics, and bug reports</h3>
                 <p className="text-ink-muted leading-relaxed">
                   The app uses Sentry to capture crash reports and errors, and runs light performance diagnostics (page-load and navigation timing) on a sample of sessions, so we can find and fix problems — this does not include session recordings or screenshots of your screen. The in-app feedback tool sends your device name and model, OS version, app version, and the screen you were on, plus whatever you write and an optional screenshot, to a private GitHub issue — Slack gets only a link and a report ID, not your device details or what you wrote.
+                </p>
+
+                <h3 className="text-2xl font-bold text-white mb-3 mt-6">Maps and place search</h3>
+                <p className="text-ink-muted leading-relaxed">
+                  The park map is drawn by OpenFreeMap, from OpenStreetMap data: when you open the map, your phone asks that service for the area on screen. When you search the map, the words you type and the rough area the map is showing go to Photon, a place search run by komoot. Both see your phone&apos;s internet address, as any website does. Neither receives your name, your email or anything from your account. The app does not read where your phone is, so it sends no location of yours to either.
                 </p>
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">What we do not collect in the app</h3>
