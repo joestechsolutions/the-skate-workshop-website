@@ -19,7 +19,7 @@ export default function PrivacyPage() {
           <div className="max-w-4xl mx-auto">
             <h1 className="heading-xl mb-6">Privacy Policy</h1>
             <p className="text-xl text-ink-muted">
-              Last Updated: November 25, 2026
+              Last Updated: November 27, 2026
             </p>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">Maps and place search</h3>
                 <p className="text-ink-muted leading-relaxed">
-                  The park map is drawn by OpenFreeMap, from OpenStreetMap data: when you open the map, your phone asks that service for the area on screen. When you search the map, the words you type and the rough area the map is showing go to Photon, a place search run by komoot. Both see your phone&apos;s internet address, as any website does. Neither receives your name, your email or anything from your account. The app does not read where your phone is, so it sends no location of yours to either.
+                  The park map is drawn by Google Maps on app builds that carry it, and by OpenFreeMap (from OpenStreetMap data) on older ones: when you open the map, your phone asks that service for the area on screen. When you search the map, the words you type and the rough area the map is showing go to Photon, a place search run by komoot. Each of them sees your phone&apos;s internet address, as any website does. None receives your name, your email or anything from your account. What Google does with what it receives is covered by the <a href="https://policies.google.com/privacy" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Google Privacy Policy</a>, and using the map means accepting the <a href="https://maps.google.com/help/terms_maps.html" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Google Maps/Google Earth Additional Terms of Service</a>. The app does not read where your phone is, so it sends no location of yours to any of them.
                 </p>
 
                 <h3 className="text-2xl font-bold text-white mb-3 mt-6">What we do not collect in the app</h3>
