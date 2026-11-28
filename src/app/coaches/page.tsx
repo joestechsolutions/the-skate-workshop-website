@@ -28,11 +28,11 @@ export default function CoachesPage() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
   } = useForm<CoachApplicationFormData>({
     resolver: zodResolver(coachApplicationSchema),
-    mode: 'onChange',
+    mode: 'onTouched',
   })
 
   // Trigger confetti animation
@@ -203,6 +203,9 @@ export default function CoachesPage() {
                           {...register('fullName')}
                           id="fullName"
                           type="text"
+                          autoComplete="name"
+                          aria-invalid={!!errors.fullName}
+                          aria-describedby={errors.fullName ? 'fullName-error' : undefined}
                           placeholder="Your full name"
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
@@ -215,6 +218,7 @@ export default function CoachesPage() {
                       <AnimatePresence>
                         {errors.fullName && (
                           <motion.p
+                            id="fullName-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -239,6 +243,10 @@ export default function CoachesPage() {
                           {...register('email')}
                           id="email"
                           type="email"
+                          inputMode="email"
+                          autoComplete="email"
+                          aria-invalid={!!errors.email}
+                          aria-describedby={errors.email ? 'email-error' : undefined}
                           placeholder="your@email.com"
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
@@ -251,6 +259,7 @@ export default function CoachesPage() {
                       <AnimatePresence>
                         {errors.email && (
                           <motion.p
+                            id="email-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -275,6 +284,10 @@ export default function CoachesPage() {
                           {...register('phone')}
                           id="phone"
                           type="tel"
+                          inputMode="tel"
+                          autoComplete="tel"
+                          aria-invalid={!!errors.phone}
+                          aria-describedby={errors.phone ? 'phone-error' : undefined}
                           placeholder="+1 (555) 000-0000"
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
@@ -287,6 +300,7 @@ export default function CoachesPage() {
                       <AnimatePresence>
                         {errors.phone && (
                           <motion.p
+                            id="phone-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -311,6 +325,10 @@ export default function CoachesPage() {
                           {...register('yearsExperience')}
                           id="yearsExperience"
                           type="number"
+                          inputMode="numeric"
+                          autoComplete="off"
+                          aria-invalid={!!errors.yearsExperience}
+                          aria-describedby={errors.yearsExperience ? 'yearsExperience-error' : undefined}
                           placeholder="e.g., 5"
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
@@ -323,6 +341,7 @@ export default function CoachesPage() {
                       <AnimatePresence>
                         {errors.yearsExperience && (
                           <motion.p
+                            id="yearsExperience-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -347,6 +366,8 @@ export default function CoachesPage() {
                           {...register('message')}
                           id="message"
                           rows={5}
+                          aria-invalid={!!errors.message}
+                          aria-describedby={errors.message ? 'message-error' : undefined}
                           placeholder="Tell us about your coaching experience and why you'd like to join The Skate Workshop..."
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2 resize-none
@@ -359,6 +380,7 @@ export default function CoachesPage() {
                       <AnimatePresence>
                         {errors.message && (
                           <motion.p
+                            id="message-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -388,12 +410,12 @@ export default function CoachesPage() {
                     {/* Submit Button */}
                     <motion.button
                       type="submit"
-                      disabled={isSubmitting || !isValid}
+                      disabled={isSubmitting}
                       whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                       className={`w-full font-semibold px-8 py-4 rounded-lg transition-all duration-200
                         flex items-center justify-center gap-2
-                        ${isSubmitting || !isValid
+                        ${isSubmitting
                           ? 'bg-surface-raised text-ink-muted cursor-not-allowed'
                           : 'bg-brand-primary hover:bg-brand-primary/90 text-white shadow-lg hover:shadow-glow'
                         }`}

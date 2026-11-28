@@ -28,11 +28,11 @@ export default function ContactPage() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
-    mode: 'onChange',
+    mode: 'onTouched',
     defaultValues: {
       inquiryType: 'general',
     },
@@ -208,6 +208,9 @@ export default function ContactPage() {
                             {...register('name')}
                             id="name"
                             type="text"
+                            autoComplete="name"
+                            aria-invalid={!!errors.name}
+                            aria-describedby={errors.name ? 'name-error' : undefined}
                             placeholder="Your name"
                             className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                               transition-all duration-200 focus:outline-none focus:ring-2
@@ -220,6 +223,7 @@ export default function ContactPage() {
                         <AnimatePresence>
                           {errors.name && (
                             <motion.p
+                              id="name-error"
                               initial={{ opacity: 0, y: -10 }}
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: -10 }}
@@ -244,6 +248,10 @@ export default function ContactPage() {
                             {...register('email')}
                             id="email"
                             type="email"
+                            inputMode="email"
+                            autoComplete="email"
+                            aria-invalid={!!errors.email}
+                            aria-describedby={errors.email ? 'email-error' : undefined}
                             placeholder="your@email.com"
                             className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                               transition-all duration-200 focus:outline-none focus:ring-2
@@ -256,6 +264,7 @@ export default function ContactPage() {
                         <AnimatePresence>
                           {errors.email && (
                             <motion.p
+                              id="email-error"
                               initial={{ opacity: 0, y: -10 }}
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: -10 }}
@@ -280,6 +289,8 @@ export default function ContactPage() {
                         <select
                           {...register('inquiryType')}
                           id="inquiryType"
+                          aria-invalid={!!errors.inquiryType}
+                          aria-describedby={errors.inquiryType ? 'inquiryType-error' : undefined}
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white
                             transition-all duration-200 focus:outline-none focus:ring-2
                             ${errors.inquiryType
@@ -298,6 +309,7 @@ export default function ContactPage() {
                       <AnimatePresence>
                         {errors.inquiryType && (
                           <motion.p
+                            id="inquiryType-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -322,6 +334,9 @@ export default function ContactPage() {
                           {...register('subject')}
                           id="subject"
                           type="text"
+                          autoComplete="off"
+                          aria-invalid={!!errors.subject}
+                          aria-describedby={errors.subject ? 'subject-error' : undefined}
                           placeholder="Brief subject of your message"
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2
@@ -334,6 +349,7 @@ export default function ContactPage() {
                       <AnimatePresence>
                         {errors.subject && (
                           <motion.p
+                            id="subject-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -358,6 +374,8 @@ export default function ContactPage() {
                           {...register('message')}
                           id="message"
                           rows={6}
+                          aria-invalid={!!errors.message}
+                          aria-describedby={errors.message ? 'message-error' : undefined}
                           placeholder="Tell us how we can help you..."
                           className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted
                             transition-all duration-200 focus:outline-none focus:ring-2 resize-none
@@ -370,6 +388,7 @@ export default function ContactPage() {
                       <AnimatePresence>
                         {errors.message && (
                           <motion.p
+                            id="message-error"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -399,12 +418,12 @@ export default function ContactPage() {
                     {/* Submit Button */}
                     <motion.button
                       type="submit"
-                      disabled={isSubmitting || !isValid}
+                      disabled={isSubmitting}
                       whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                       whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                       className={`w-full font-semibold px-8 py-4 rounded-lg transition-all duration-200
                         flex items-center justify-center gap-2
-                        ${isSubmitting || !isValid
+                        ${isSubmitting
                           ? 'bg-surface-raised text-ink-muted cursor-not-allowed'
                           : 'bg-brand-primary hover:bg-brand-primary/90 text-white shadow-lg hover:shadow-glow'
                         }`}
