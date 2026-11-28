@@ -12,6 +12,7 @@ export default function DownloadGate() {
   const [code, setCode] = useState('')
   const [checking, setChecking] = useState(false)
   const [wrong, setWrong] = useState(false)
+  const [slowDown, setSlowDown] = useState(false)
   const [links, setLinks] = useState<Links | null>(null)
 
   const open = async (event: React.FormEvent) => {
@@ -19,6 +20,7 @@ export default function DownloadGate() {
     if (checking || code.trim() === '') return
     setChecking(true)
     setWrong(false)
+    setSlowDown(false)
     try {
       const response = await fetch('/api/download-access', {
         method: 'POST',
@@ -27,6 +29,7 @@ export default function DownloadGate() {
       })
       const answer = (await response.json().catch(() => null)) as ({ ok?: boolean } & Partial<Links>) | null
       if (response.ok && answer?.ok) setLinks({ ios: answer.ios ?? null, android: answer.android ?? null })
+      else if (response.status === 429) setSlowDown(true)
       else setWrong(true)
     } catch {
       setWrong(true)
@@ -96,6 +99,11 @@ export default function DownloadGate() {
       {wrong ? (
         <p id="pass-code-wrong" role="alert" className="text-body-sm text-white mb-4">
           That code is not right.
+        </p>
+      ) : null}
+      {slowDown ? (
+        <p role="alert" className="text-body-sm text-white mb-4">
+          Too many tries. Wait a minute and try again.
         </p>
       ) : null}
       <button type="submit" disabled={checking || code.trim() === ''} className="btn-primary text-lg px-16 py-6 inline-flex items-center justify-center gap-3 disabled:opacity-60">
