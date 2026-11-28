@@ -26,23 +26,19 @@ export default function DownloadPage() {
             GET THE <span className="text-brand-primary">APP</span>
           </h1>
 
-          {/* The pass code screen: the install links come from the server, after the right code */}
-          <div className="mb-20">
-            <DownloadGate />
-          </div>
-
-          {/* Everyone else */}
-          <p className="text-body text-white/70 mb-10 text-center max-w-xl mx-auto">
-            No pass code? The app is being tested with a small invited crew and is not open yet. Leave your email and we&apos;ll tell you when it is.
-          </p>
-          <div id="waitlist">
-            <WaitlistForm />
-          </div>
-
-          {/* Footer Note */}
-          <p className="text-body-sm text-white/40 mt-12 text-center">
-            No spam. Just one email when it opens.
-          </p>
+          {/* The pass code screen: the install links come from the server, after the right code. What is inside it is
+              for everyone else, and goes away once the right code is in. */}
+          <DownloadGate>
+            <p className="text-body text-white/70 mt-20 mb-10 text-center max-w-xl mx-auto">
+              No pass code? The app is being tested with a small invited crew and is not open yet. Leave your email and we&apos;ll tell you when it is.
+            </p>
+            <div id="waitlist">
+              <WaitlistForm />
+            </div>
+            <p className="text-body-sm text-white/40 mt-12 text-center">
+              No spam. Just one email when it opens.
+            </p>
+          </DownloadGate>
         </div>
       </div>
     </div>
