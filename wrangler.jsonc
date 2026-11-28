@@ -14,6 +14,12 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  // The download page's pass code: how many tries are let through in a minute (src/lib/attempt-limit.ts).
+  // namespace_id is any whole number of our own choosing, unique in the account.
+  "ratelimits": [
+    { "name": "DOWNLOAD_TRIES_PER_VISITOR", "namespace_id": "4801", "simple": { "limit": 5, "period": 60 } },
+    { "name": "DOWNLOAD_TRIES_ALL", "namespace_id": "4802", "simple": { "limit": 30, "period": 60 } }
+  ],
   "services": [
     // Must match "name" above.
     { "binding": "WORKER_SELF_REFERENCE", "service": "skate-workshop-web" }
