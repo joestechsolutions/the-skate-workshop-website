@@ -1,11 +1,14 @@
 import { Metadata } from 'next'
+import DownloadGate from '@/components/DownloadGate'
 import WaitlistForm from '@/components/WaitlistForm'
 
-// No install link here: the app is being tested by an invited crew and is not open yet (the owner, 2026-11-28:
-// "Take that down. We are not ready yet"). People leave an email and hear when it opens.
+// The app is being tested by an invited crew and is not open yet (the owner, 2026-11-28: "Take that down. We are
+// not ready yet", then: "This should be behind a pass code screen"). The install links are not in this page: the
+// server sends them only after the right pass code (src/lib/download-access.ts). Everyone else can leave an email.
 export const metadata: Metadata = {
   title: 'Get the app | The Skate Workshop',
-  description: 'The Skate Workshop app is not open yet. Leave your email and we will tell you when it is.',
+  description: 'The Skate Workshop app is being tested by an invited crew. Leave your email and we will tell you when it opens.',
+  robots: { index: false, follow: false },
 }
 
 export default function DownloadPage() {
@@ -15,7 +18,7 @@ export default function DownloadPage() {
         <div className="max-w-3xl mx-auto py-20">
           {/* Eyebrow */}
           <p className="text-white/60 uppercase tracking-widest text-sm mb-8 text-center">
-            NOT OPEN YET
+            INVITED TESTERS
           </p>
 
           {/* MASSIVE Headline */}
@@ -23,9 +26,14 @@ export default function DownloadPage() {
             GET THE <span className="text-brand-primary">APP</span>
           </h1>
 
-          {/* Not open yet */}
+          {/* The pass code screen: the install links come from the server, after the right code */}
+          <div className="mb-20">
+            <DownloadGate />
+          </div>
+
+          {/* Everyone else */}
           <p className="text-body text-white/70 mb-10 text-center max-w-xl mx-auto">
-            The app is being tested with a small invited crew and is not open yet. Leave your email and we&apos;ll tell you when it is.
+            No pass code? The app is being tested with a small invited crew and is not open yet. Leave your email and we&apos;ll tell you when it is.
           </p>
           <div id="waitlist">
             <WaitlistForm />
