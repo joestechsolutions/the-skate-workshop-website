@@ -12,15 +12,15 @@ describe('the limit on pass code tries', () => {
     expect(one.limit).toHaveBeenCalledWith({ key: '203.0.113.7' })
   })
 
-  it('refuses when everybody together has tried too often, without asking the visitor counter', async () => {
-    const all = counter(false)
-    const one = counter(true)
+  it('a visitor over their own limit is refused WITHOUT using up a try of the shared counter (one machine cannot lock everybody out)', async () => {
+    const all = counter(true)
+    const one = counter(false)
     expect(await tooManyTries({ DOWNLOAD_TRIES_ALL: all, DOWNLOAD_TRIES_PER_VISITOR: one }, '203.0.113.7')).toBe(true)
-    expect(one.limit).not.toHaveBeenCalled()
+    expect(all.limit).not.toHaveBeenCalled()
   })
 
-  it('refuses when this visitor has tried too often', async () => {
-    expect(await tooManyTries({ DOWNLOAD_TRIES_ALL: counter(true), DOWNLOAD_TRIES_PER_VISITOR: counter(false) }, '203.0.113.7')).toBe(true)
+  it('refuses when everybody together has tried too often', async () => {
+    expect(await tooManyTries({ DOWNLOAD_TRIES_ALL: counter(false), DOWNLOAD_TRIES_PER_VISITOR: counter(true) }, '203.0.113.7')).toBe(true)
   })
 
   it('a visitor with no address shares one key; no counters at all (a local run) lets the try through', async () => {
