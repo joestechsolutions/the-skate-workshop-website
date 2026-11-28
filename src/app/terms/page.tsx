@@ -21,7 +21,7 @@ export default function TermsPage() {
           <div className="max-w-4xl mx-auto">
             <h1 className="heading-xl mb-6">Terms of Service</h1>
             <p className="text-xl text-ink-muted">
-              Last Updated: October 25, 2026
+              Last Updated: November 27, 2026
             </p>
           </div>
         </div>
@@ -116,6 +116,13 @@ export default function TermsPage() {
                   <li>Collect other users' information without their consent</li>
                   <li>Transmit viruses or other harmful code</li>
                 </ul>
+              </div>
+
+              <div>
+                <h2 className="text-3xl font-bold text-white mb-4">Maps</h2>
+                <p className="text-ink-muted leading-relaxed">
+                  On app builds that carry it, the park map is Google Maps. By using it you are bound by the <a href="https://maps.google.com/help/terms_maps.html" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Google Maps/Google Earth Additional Terms of Service</a>, including the <a href="https://policies.google.com/privacy" className="text-white underline decoration-brand-primary underline-offset-2 hover:decoration-brand-red-light">Google Privacy Policy</a>. Other builds draw the map with OpenFreeMap, from OpenStreetMap data.
+                </p>
               </div>
 
               <div>
