@@ -8,7 +8,8 @@ import { Loader2, Lock } from 'lucide-react'
 
 type Links = { ios: string | null; android: string | null }
 
-export default function DownloadGate() {
+/** `children` is what people without a pass code see under the field (the email form); it goes away once the page is open. */
+export default function DownloadGate({ children }: { children?: React.ReactNode }) {
   const [code, setCode] = useState('')
   const [checking, setChecking] = useState(false)
   const [wrong, setWrong] = useState(false)
@@ -61,6 +62,11 @@ export default function DownloadGate() {
             </a>
           </div>
         ) : null}
+        {links.android && !links.ios ? (
+          <p className="text-body text-white/70 mb-12 max-w-xl mx-auto" data-testid="iphone-by-invitation">
+            On iPhone the app comes by email invitation, through Apple&apos;s TestFlight. Ask the person who invited you.
+          </p>
+        ) : null}
         {!links.ios && !links.android ? (
           <p className="text-body text-white/70 max-w-xl mx-auto">The code is right, but there is no install link here yet. Ask the person who invited you.</p>
         ) : (
@@ -73,43 +79,46 @@ export default function DownloadGate() {
   }
 
   return (
-    <form onSubmit={open} className="w-full max-w-md mx-auto text-center" noValidate>
-      <label htmlFor="pass-code" className="block text-body text-white/70 mb-6">
-        If you were invited, enter your pass code.
-      </label>
-      <div className="relative mb-4">
-        <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ink-muted" aria-hidden="true" />
-        <input
-          id="pass-code"
-          type="password"
-          value={code}
-          onChange={(event) => {
-            setCode(event.target.value)
-            setWrong(false)
-          }}
-          placeholder="Pass code"
-          autoComplete="off"
-          autoCapitalize="none"
-          spellCheck={false}
-          aria-invalid={wrong}
-          aria-describedby={wrong ? 'pass-code-wrong' : undefined}
-          className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-brand-primary ${wrong ? 'border-brand-primary' : 'border-line'}`}
-        />
-      </div>
-      {wrong ? (
-        <p id="pass-code-wrong" role="alert" className="text-body-sm text-white mb-4">
-          That code is not right.
-        </p>
-      ) : null}
-      {slowDown ? (
-        <p role="alert" className="text-body-sm text-white mb-4">
-          Too many tries. Wait a minute and try again.
-        </p>
-      ) : null}
-      <button type="submit" disabled={checking || code.trim() === ''} className="btn-primary text-lg px-16 py-6 inline-flex items-center justify-center gap-3 disabled:opacity-60">
-        {checking ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : null}
-        Open
-      </button>
-    </form>
+    <>
+      <form onSubmit={open} className="w-full max-w-md mx-auto text-center" noValidate>
+        <label htmlFor="pass-code" className="block text-body text-white/70 mb-6">
+          If you were invited, enter your pass code.
+        </label>
+        <div className="relative mb-4">
+          <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ink-muted" aria-hidden="true" />
+          <input
+            id="pass-code"
+            type="password"
+            value={code}
+            onChange={(event) => {
+              setCode(event.target.value)
+              setWrong(false)
+            }}
+            placeholder="Pass code"
+            autoComplete="off"
+            autoCapitalize="none"
+            spellCheck={false}
+            aria-invalid={wrong}
+            aria-describedby={wrong ? 'pass-code-wrong' : undefined}
+            className={`w-full pl-12 pr-4 py-4 bg-black/40 border rounded-lg text-white placeholder-ink-muted transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-primary focus:border-brand-primary ${wrong ? 'border-brand-primary' : 'border-line'}`}
+          />
+        </div>
+        {wrong ? (
+          <p id="pass-code-wrong" role="alert" className="text-body-sm text-white mb-4">
+            That code is not right.
+          </p>
+        ) : null}
+        {slowDown ? (
+          <p role="alert" className="text-body-sm text-white mb-4">
+            Too many tries. Wait a minute and try again.
+          </p>
+        ) : null}
+        <button type="submit" disabled={checking || code.trim() === ''} className="btn-primary text-lg px-16 py-6 inline-flex items-center justify-center gap-3 disabled:opacity-60">
+          {checking ? <Loader2 className="w-5 h-5 animate-spin" aria-hidden="true" /> : null}
+          Open
+        </button>
+      </form>
+      {children}
+    </>
   )
 }
